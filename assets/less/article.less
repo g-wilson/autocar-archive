@@ -1,7 +1,7 @@
 #main.article-page {
   border-top: 1px solid @c-lightgrey;
   min-height: 1080px;
-  padding: 0;
+  padding: 0 0 50px 0;
   background: @c-lightgrey;
   font-size: 1.2em;
 
@@ -38,13 +38,28 @@
       margin: 20px 0 20px 0;
     }
 
+  .chapter {
+
+    h2 {
+      margin-bottom: 30px;
+      font-size: 2em;
+      font-weight: 300;
+    }
+
+    &> img {
+      float: right;
+      width: 50%;
+      margin: 0 -100px 40px 40px;
+    }
+  }
+
   .heading {
     position: relative;
     text-align: center;
     padding-top: 30%;
     background: url(../../article/photos/A45_AMG_STU_003.jpg) no-repeat fixed;
     background-size: 100%;
-    background-position: 0 -150px;
+    background-position: 0 -190px;
 
     .text-overlay {
       position: absolute;
@@ -80,6 +95,69 @@
     }
   }
 
+  .lead-image {
+    position: relative;
+    width:100%;
+    max-height:600px;
+    overflow:hidden;
+    vertical-align: middle;
+
+    .text-overlay {
+      h2 {
+        font-size:3em;
+        padding:1em;
+        position:absolute;
+        width:100%;
+        text-align:center;
+        left:0;
+        top:30%;
+        color:#fff;
+        text-shadow: 0px 1px 10px rgba(0,0,0,0.8);
+        font-weight: 800
+
+      }
+    }
+    img {
+      margin-top:-15%;
+      width: 100%;
+    }
+  }
+
+  .shift-right {
+    box-shadow: 1px 1px 71px 41px white;
+    z-index:0
+  }
+
+  .sidebar {
+    font-size: 0.8em;
+    padding: 20px;
+    background: @c-lightblue;
+    height:100%;
+    z-index:10;
+    position: relative;
+  }
+
+  .box-out {
+    background: @c-white;
+    padding: 30px 10px;
+
+    small {
+      display: block;
+      margin: 0 0 10px 0;
+
+      &:last-of-type {
+        margin: 0;
+      }
+    }
+  }
+
+  .ad-panel {
+    background: @c-white;
+    padding: 10px;
+    margin: 20px 0;
+    font-size: 0.8em;
+  }
+
   .fact-list {
     .cf;
     background: @c-darkgrey;
@@ -94,7 +172,7 @@
 
       li {
         display: inline-block;
-        margin: 20px 40px 0 0;
+        margin: 20px 30px 0 0;
         font-weight: 300;
         text-align: center;
 
@@ -182,7 +260,7 @@ nav.chapter-nav {
   position: absolute;
   z-index: 999;
   left: 0;
-  top: 750px;
+  top: 700px;
   color: @c-white;
   background: @c-darkgrey;
 
@@ -214,7 +292,7 @@ nav.chapter-nav {
 
   span.title {
     position: relative;
-    display: block;
+    display: none;
     float: left;
     height: 30px;
     width: 240px;
@@ -252,6 +330,9 @@ nav.chapter-nav {
   }
 
   &:hover {
+    .title {
+      display: block;
+    }
     .reveal {
       opacity: 1;
       width: 240px;
@@ -260,41 +341,67 @@ nav.chapter-nav {
   }
 
 }
-.lead-image {
-	position: relative;
-	width:100%;
-	max-height:600px;
-	overflow:hidden;
-	vertical-align: middle;
-	.text-overlay {
-		h2 {
-			font-size:3em;
-			padding:1em;
-			position:absolute;
-			width:100%;
-			text-align:center;
-			left:0;
-			top:30%;
-			color:#fff;
-			text-shadow: 0px 1px 10px rgba(0,0,0,0.8);
-			font-weight: 800
 
-		}
-	}
-	img {
-		margin-top:-13%
-	}
+section.paynow {
+  .cf;
+  background: @c-white;
+  padding: 30px;
+  margin: 50px auto !important;
+
+  .btn {
+    display: block;
+    float: left;
+    margin-right: 20px;
+
+    .icon {
+      display: inline-block;
+      margin-right: 10px;
+    }
+  }
+
+  p {
+    clear: both;
+    display: block;
+    padding-top: 10px;  
+  }
+
 }
-.shift-right {
-	box-shadow: 1px 1px 71px 41px white;
-	z-index:0
+
+nav.paywall-nav {
+  display: block;
+  position: relative;
+  li {
+    .cf;
+    background: @c-mediumgrey;
+    border-bottom: 1px solid @c-grey;
+    color: @c-white;
+
+    &:first-of-type {
+      background: @c-darkgrey;
+    }
+  }
+  .icon {
+    float: right;
+  }
+  span {
+    display: block;
+    float: left;
+    padding: 10px;
+  }
+  .reveal {
+    display: block;
+    opacity: 1;
+  }
 }
-.sidebar {
-	font-size:0.8em;
-	padding:1em !important;
-	background: #c3d0d7;
-	height:100%;
-	width:22%;
-	z-index:10;
-	position: relative
+
+.is-paywalled .chapter p {
+  color: transparent;
+  text-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
+
+
+
+
+
+
+

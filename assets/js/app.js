@@ -5,7 +5,7 @@ var autocar = angular.module('autocar', ['ngRoute','ngAnimate','ngSanitize']).
 
     $routeProvider.
     when('/', {controller:'MainCtrl', templateUrl:'views/home.html'}).
-    when('/article/:title', {controller:'ArticleCtrl', templateUrl:'views/article.html'}).
+    when('/article', {controller:'ArticleCtrl', templateUrl:'views/article.html'}).
     when('/top100', {controller:'TopCtrl', templateUrl:'views/top100.html'}).
     otherwise({redirectTo:'/'});
 
