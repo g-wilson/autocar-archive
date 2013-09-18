@@ -1,52 +1,62 @@
 'use strict';
 
-autocar.controller('ArticleCtrl', function($scope, $routeParams) {
+autocar.controller('ArticleCtrl', function($scope) {
 
-      var stickyBlock = $('nav.chapter-nav'),
-        elemTop = stickyBlock.offset().top,
-        footerTop = $('#main').offset().bottom;
+  $('.chapter-nav a').click(function() {
+    var dest = $(this).attr('href');
+    try {
+      $(window).scrollTop($(dest).offset().top - 50);
+    } catch(e) {
+      return false;
+    }
+    return false;
+  });
 
-      $(window).scroll(function() {
-        var docViewTop = $(window).scrollTop(),
-          docViewBottom = docViewTop + $(window).height();
+  var stickyBlock = $('nav.chapter-nav'),
+    elemTop = stickyBlock.offset().top,
+    footerTop = $('#main').offset().bottom;
 
-          if (docViewTop >= elemTop - 65) {
-            // Element should be stuck to top
-            stickyBlock.css({
-              position: 'fixed',
-              'bottom': 'auto',
-              'top': '65px'
-            });
-          } else if (docViewTop <= elemTop) {
-            // Element should be un-stuck
-            stickyBlock.css({
-              position: 'absolute',
-              'bottom': 'auto',
-              'top': elemTop
-            });
-          }
+  $(window).scroll(function() {
+    var docViewTop = $(window).scrollTop(),
+      docViewBottom = docViewTop + $(window).height();
 
-        // Find out what section we're looking at and make the nav item active
-        $('section.chapter').each(function(){
-          if ( isScrolledIntoView($(this)) ) {
-            var i = $(this).index();
-            $('.chapter-nav ul li').removeClass('active').eq(i-2).addClass('active');
-          }
+      if (docViewTop >= elemTop - 65) {
+        // Element should be stuck to top
+        stickyBlock.css({
+          position: 'fixed',
+          'bottom': 'auto',
+          'top': '65px'
         });
-
-      });
-
-      function isScrolledIntoView(elem) {
-          var docViewTop = $(window).scrollTop(),
-            docViewBottom = docViewTop + ($(window).height()/2);
-      
-          var elemTop = $(elem).offset().top,
-            elemBottom = elemTop + $(elem).height();
-      
-        return (
-          (elemBottom >= docViewTop) &&
-          (elemTop <= docViewBottom)
-        );
+      } else if (docViewTop <= elemTop) {
+        // Element should be un-stuck
+        stickyBlock.css({
+          position: 'absolute',
+          'bottom': 'auto',
+          'top': elemTop
+        });
       }
+
+    // Find out what section we're looking at and make the nav item active
+    $('section.chapter').each(function(){
+      if ( isScrolledIntoView($(this)) ) {
+        var i = $(this).index();
+        $('.chapter-nav ul li').removeClass('active').eq(i-2).addClass('active');
+      }
+    });
+
+  });
+
+  function isScrolledIntoView(elem) {
+      var docViewTop = $(window).scrollTop(),
+        docViewBottom = docViewTop + ($(window).height()/2);
+  
+      var elemTop = $(elem).offset().top,
+        elemBottom = elemTop + $(elem).height();
+  
+    return (
+      (elemBottom >= docViewTop) &&
+      (elemTop <= docViewBottom)
+    );
+  }
 
 });

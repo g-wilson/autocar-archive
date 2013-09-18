@@ -1,22 +1,18 @@
 #main.article-page {
   border-top: 1px solid @c-lightgrey;
   min-height: 1080px;
-  padding-right: 0;
-  padding-left: 0;
+  padding: 0;
   background: @c-lightgrey;
   font-size: 1.2em;
 
   .contain {
-    width: 75%;
+    width: 1000px;
     margin: 0 auto;
-  }
-
-  section {
-    padding-bottom: 50px;
   }
 
   img {
     max-width: 100%;
+    display: block;
   }
 
   p {
@@ -30,44 +26,103 @@
     padding: 0;
   }
 
+  section {
+    padding: 50px 0;
+  }
+
   .heading {
+    position: relative;
     text-align: center;
-    // padding-bottom: 50px;
-    // margin-bottom: 20px;
-    // border-bottom: 1px solid @c-grey;
+    padding-top: 30%;
+    background: url(../../article/photos/A45_AMG_STU_003.jpg) no-repeat fixed;
+    background-size: 100%;
+    background-position: 0 -150px;
+
+    .text-overlay {
+      position: absolute;
+      top: 30%; left: 50%;
+      width: 1000px;
+      margin: -80px 0 0 -500px;
+      color: @c-white;
+      padding: 30px;
+    }
 
     h1 {
-      font-size: 3em;
+      font-size: 3.5em;
     }
     .byline {
-      font-size: 1.4em;
-      font-weight: 200;
+      font-size: 1.6em;
+      font-weight: 600;
       margin: 0;
     }
   }
 
-  .full-bleed {
-    width: 100%;
-    margin: 0 auto;
+  .summary {
+    & > p:first-child {
+      font-size: 1.2em;
+
+      &:first-letter { 
+        float: left;
+        color: @c-red;
+        font-size: 2.99em;
+        line-height: 1em;
+        padding: 0 10px 0 0;
+      }
+    }
   }
 
-  .summary {
-    .pay-buttons {
-      padding-right: 40px;
+  .fact-list {
+    .cf;
+    background: @c-darkgrey;
+    color: @c-white;
+    padding: 30px 0 30px 0;
+    position: relative;
+
+    ul {
+      width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+
+      li {
+        display: inline-block;
+        margin: 20px 40px 0 0;
+        font-weight: 300;
+        text-align: center;
+
+        strong {
+          display: block;
+          font-weight: 600;
+          text-transform: uppercase;
+        }
+
+      }
     }
-    p:first-child:first-letter { 
-      float: left; 
-      color: @c-red; 
-      font-size: 75px; 
-      line-height: 60px; 
-      padding-top: 4px; 
-      padding-right: 8px; 
-      padding-left: 3px; 
+    .tested {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      margin-left: -200px;
+
+      &>div {
+        float: left;
+        padding: 10px 20px;
+        text-transform: uppercase;
+        font-weight: 800;
+      }
+      .title {
+        background: @c-red;
+        color: @c-white;
+      }
+      .model {
+        color: @c-black;
+        background: @c-yellow;
+      }
     }
   }
 
   .list {
     margin-bottom: 30px;
+    padding-left: 10px;
 
     h3 {
       display: block;
@@ -93,13 +148,25 @@
     }
   }
 
+  blockquote {
+    float: left;
+    margin: 5px 30px 20px -80px;
+    width: 55%;
+    border-left: 1px solid @c-red;
+    padding-left: 20px;
+    font-size: 1.5em;
+    font-weight: 300;
+    color: @c-red;
+    font-style: italic;
+  }
+
 }
 
 nav.chapter-nav {
   position: absolute;
   z-index: 999;
   left: 0;
-  top: 1410px;
+  top: 750px;
   color: @c-white;
   background: @c-darkgrey;
 
@@ -172,19 +239,3 @@ nav.chapter-nav {
   }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
