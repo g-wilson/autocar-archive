@@ -22,14 +22,16 @@ autocar.controller('MainCtrl', function($scope, SearchIndex) {
       pagesShown = 1;
     }
 
-    $scope.expandListing = function(ev) {
-      angular.element(ev.srcElement).parent().parent().toggleClass('result-large');
-      var imgUrl = angular.element(ev.srcElement).parent().parent().find('img').attr('data-src');
-      angular.element(ev.srcElement).parent().parent().find('img').attr('src',imgUrl);
-    }
-
   }).error(function() {
     console.log('error getting car list');
   })
+
+
+  $scope.expandListing = function(ev) {
+    $(ev.target).parent().parent().toggleClass('result-large');
+    var imgUrl = $(ev.target).parent().parent().find('img').attr('data-src');
+    $(ev.target).parent().parent().find('img').attr('src',imgUrl);
+  }
+
 
 });

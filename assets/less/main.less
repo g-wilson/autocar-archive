@@ -96,11 +96,11 @@
 		left: 0; right: 0;
 		background: @c-blue;
 		opacity: 0.65;
-		.animate(0.2s);
+		.animate(0.2s,0);
 
 		&:hover {
 			opacity: 0;
-			.animate(0.2s);
+			.animate(0.2s,0);
 		}
 	}
 
@@ -143,11 +143,11 @@
 	}
 
 	// Animation
-	.animate(@duration) {
-		-webkit-transition: all @duration ease;
-		   -moz-transition: all @duration ease;
-			-ms-transition: all @duration ease;
-				transition: all @duration ease;
+	.animate(@duration, @delay) {
+		-webkit-transition: all @duration @delay ease;
+		   -moz-transition: all @duration @delay ease;
+			-ms-transition: all @duration @delay ease;
+				transition: all @duration @delay ease;
 	}
 
 	// Gradients
