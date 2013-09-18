@@ -17,7 +17,7 @@
 
   p {
     line-height: 1.5em;
-    margin-bottom: 30px;
+    margin: 1em auto 30px;
     font-weight: 300;
   }
 
@@ -27,8 +27,16 @@
   }
 
   section {
-    padding: 50px 0;
+    padding: 0;
   }
+  .rating-large {
+      display: block;
+      width: 100px;
+      background: url(../img/stars_big.png) no-repeat center left;
+      background-size: 100%;
+      height: 22px;
+      margin: 20px 0 20px 0;
+    }
 
   .heading {
     position: relative;
@@ -40,11 +48,12 @@
 
     .text-overlay {
       position: absolute;
-      top: 30%; left: 50%;
+      top: 40%; left: 50%;
       width: 1000px;
       margin: -80px 0 0 -500px;
       color: @c-white;
       padding: 30px;
+      text-shadow: 0px 1px 10px rgba(0,0,0,0.5)
     }
 
     h1 {
@@ -121,15 +130,15 @@
   }
 
   .list {
-    margin-bottom: 30px;
-    padding-left: 10px;
+    padding: 10px;
+	background: #fff;
 
     h3 {
       display: block;
       text-transform: uppercase;
       padding-bottom: 10px;
       margin-bottom: 10px;
-      border-bottom: 1px solid @c-red;
+      border-bottom: 1px solid #ddd;
     }
 
     ul {
@@ -140,6 +149,11 @@
       li {
         font-weight: 300;
         margin-bottom: 10px;
+        font-weight: 600;
+		font-size: 0.8em;
+		list-style: disc;
+		margin-left: 20px;
+		color:#999;
 
         strong {
           float: right;
@@ -152,12 +166,14 @@
     float: left;
     margin: 5px 30px 20px -80px;
     width: 55%;
-    border-left: 1px solid @c-red;
-    padding-left: 20px;
+    border-right: 1px solid @c-red;
     font-size: 1.5em;
     font-weight: 300;
     color: @c-red;
     font-style: italic;
+    text-align: right;
+	padding-right: 1em;
+	
   }
 
 }
@@ -203,11 +219,12 @@ nav.chapter-nav {
     height: 30px;
     width: 240px;
     padding: 20px 0 20px 0;
+    line-height: 1em;
 
     &:after {
       content: '';
       position: absolute;
-      right: 20px; top: 28px;
+      right: 20px; top: 22px;
       width: 0px;
       height: 0px;
       border-style: solid;
@@ -218,9 +235,13 @@ nav.chapter-nav {
 
   span.index {
     display: block;
-    float: left;
-    padding: 20px;
-    color: @c-white;
+	float: left;
+	padding: 10px;
+	color: #ffffff;
+	font-size: 1.8em;
+	font-weight: 300;
+	opacity: 0.5;
+	width:40px
   }
 
   .reveal {
@@ -238,4 +259,42 @@ nav.chapter-nav {
     }
   }
 
+}
+.lead-image {
+	position: relative;
+	width:100%;
+	max-height:600px;
+	overflow:hidden;
+	vertical-align: middle;
+	.text-overlay {
+		h2 {
+			font-size:3em;
+			padding:1em;
+			position:absolute;
+			width:100%;
+			text-align:center;
+			left:0;
+			top:30%;
+			color:#fff;
+			text-shadow: 0px 1px 10px rgba(0,0,0,0.8);
+			font-weight: 800
+
+		}
+	}
+	img {
+		margin-top:-13%
+	}
+}
+.shift-right {
+	box-shadow: 1px 1px 71px 41px white;
+	z-index:0
+}
+.sidebar {
+	font-size:0.8em;
+	padding:1em !important;
+	background: #c3d0d7;
+	height:100%;
+	width:22%;
+	z-index:10;
+	position: relative
 }
