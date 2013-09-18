@@ -183,8 +183,36 @@ section.featured {
 }
 
 .search-results {
+  position: relative;
   width: 100%;
   padding: 30px 0;
+  border-top: 1px solid @c-grey;
+  background: @c-darkgrey;
+  margin-top: -70px;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 50%; top: -30px;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0 25px 30px 25px;
+    border-color: transparent transparent @c-darkgrey transparent;
+    margin-left: -13px;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: -32px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 27px 32px 27px;
+    border-color: transparent transparent @c-grey transparent;
+    margin-left: -15px;
+  }
 
   .result {
     width: 100%;
