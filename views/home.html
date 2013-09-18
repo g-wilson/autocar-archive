@@ -1,0 +1,92 @@
+<header>
+  <a href="/#/"><h1>Autocar+</h1></a>
+  <nav>
+    <ul>
+      <li>About</li>
+      <li>Pricing</li>
+      <li>Support</li>
+    </ul>
+  </nav>
+</header>
+
+<div id="main" class="homepage">
+
+  <section class="hero">
+  
+    <h1>Welcome to AUTOCAR+</h1>
+    <p class="intro">Home of the road test since 1928</p>
+
+    <form class="hero-search">
+
+      <input type="text" placeholder="Search for road tests e.g. Aston Martin 1965" ng-model="query"/>
+      <input type="submit" class="hidden"/>
+
+    </form>
+
+  </section>
+
+  <section class="search-results count-{{ filtered.length }}" ng-if="query.length > 1">
+
+    <p>{{ filtered.length }} results</p>
+    <p ng-show="filtered.length > 25">Try being more specific</p>
+
+  	<div class="result {{ item.isLarge }}" ng-show="$index < 15" ng-repeat="item in filtered = (results | filter:query) | orderBy:'year':true">
+      <div class="image"><img src="{{ item.image }}"/></div>
+  		<h3>
+  			<a ng-click="expandListing($event)">{{ item.title }}</a>
+  			<span class="year">{{ item.year }}</span>
+  		</h3>
+      <p class="summary">Donec sed odio dui. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+  		<a class="btn btn-yellow" href="/#/article/example">Read ></a>
+  	</div>
+
+    <a class="btn btn-more btn-lightgrey">Older</a>
+
+  </section>
+
+</div>
+
+<section class="featured" ng-hide="query.length > 1">
+  
+  <div class="feature-row editors">
+    <h2>Editors picks</h2>
+    <ul>
+      <li>
+        <p>Ferrari FF</p>
+        <div class="overlay"></div>
+        <a href="/#/article/example"><img src="http://images.cdn.autocar.co.uk/sites/autocar.co.uk/files/imagecache/car_review_image_645/ferrari-ff-uk-4_01.jpg" /></a>
+      </li>
+      <li>
+        <p>Aston Martin Rapide</p>
+        <div class="overlay"></div>
+        <a href="/#/article/example"><img src="http://images.cdn.autocar.co.uk/sites/autocar.co.uk/files/imagecache/car_review_image_645/aston-martin-rapide.jpg" /></a>
+      </li>
+      <li>
+        <p>Volkswagen Polo</p>
+        <div class="overlay"></div>
+        <a href="/#/article/example"><img src="http://images.cdn.autocar.co.uk/sites/autocar.co.uk/files/imagecache/car_review_image_645/30999241353201600x1060_0.jpg" /></a>
+      </li>
+      <li>
+        <p>Honda CR-V</p>
+        <div class="overlay"></div>
+        <a href="/#/article/example"><img src="http://images.cdn.autocar.co.uk/sites/autocar.co.uk/files/imagecache/car_review_image_645/honda-cr-v-1_0.jpg" /></a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="feature-row top100">
+    <h2>Top 100 cars &rarr;</h2>
+  </div>
+
+  <div class="feature-row collections">
+    <h2>Collections</h2>
+    <ul>
+      <li>
+        <p>150+ mph cars</p>
+        <div class="overlay"></div>
+        <a href="/#/article/example"><img src="http://3.bp.blogspot.com/-3KjB7HxVs0M/TgFIUKAt1RI/AAAAAAAAA4M/9pB5gZaqGfA/s400/Bugatti-Veyron-2.jpg" /></a>
+      </li>
+    </ul>
+  </div>
+
+</section>

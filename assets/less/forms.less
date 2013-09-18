@@ -1,0 +1,128 @@
+// Form element styling
+
+@btn-hover-lightness: 10%;
+
+.btn {
+	display: block;
+	padding: 10px 20px;
+	margin: 5px 0;
+	background: @c-black;
+	color: @c-white;
+	.font-smoothing;
+	.no-select;
+	font-family: @f-body;
+	font-weight: bold;
+
+	&.btn-inline { float: left; margin-right: 10px; }
+
+	&:active {
+		box-shadow: 0 2px 1px 0 rgba(0,0,0,0.5) inset;
+		padding-top: 12px;
+		padding-bottom: 8px;
+	}
+	&:hover {
+		background: lighten(@c-black, @btn-hover-lightness);
+		text-decoration: none;
+		cursor: pointer;
+	}
+
+	&.btn-blue {
+		background: @c-blue;
+		&:hover { background: lighten(@c-blue, @btn-hover-lightness); }
+	}
+	&.btn-lightblue {
+		background: @c-lightblue;
+		&:hover { background: lighten(@c-lightblue, @btn-hover-lightness); }
+	}
+	&.btn-green {
+		background: @c-green;
+		&:hover { background: lighten(@c-green, @btn-hover-lightness); }
+	}
+	&.btn-yellow {
+		background: @c-yellow;
+		&:hover { background: lighten(@c-yellow, @btn-hover-lightness); }
+		color: @c-black;
+	}
+	&.btn-orange {
+		background: @c-orange;
+		&:hover { background: lighten(@c-orange, @btn-hover-lightness); }
+	}
+	&.btn-red {
+		background: @c-red;
+		&:hover { background: lighten(@c-red, @btn-hover-lightness); }
+	}
+	&.btn-lightgrey {
+		background: @c-lightgrey;
+		&:hover { background: lighten(@c-lightgrey, @btn-hover-lightness); }
+		color: @c-black;
+	}
+	&.btn-white {
+		background: @c-white;
+		&:hover { background: darken(@c-white, @btn-hover-lightness); }
+		color: @c-black;
+	}
+	&.btn-mediumgrey {
+		background: @c-mediumgrey;
+		&:hover { background: lighten(@c-mediumgrey, @btn-hover-lightness); }
+	}
+	&.btn-darkgrey {
+		background: @c-darkgrey;
+		&:hover { background: lighten(@c-darkgrey, @btn-hover-lightness); }
+	}
+	&.btn-turquoise {
+		background: @c-turquoise;
+		&:hover { background: lighten(@c-turquoise, @btn-hover-lightness); }
+	}
+}
+
+
+
+form.form {
+
+	.field {
+		.cf; // Clearfix
+		width: 100%;
+		display: block;
+		margin: 10px 0;
+		
+		.field-label {
+			padding: 6px 15px 0 0;
+			float: left;
+			width: 30%;
+			text-align: right;
+		}
+		.field-control {
+			float: right;
+			width: 70%;
+		}
+	}
+
+	h1 {
+		font-size: 1.2em;
+		border-bottom: 1px solid @c-lightgrey;
+		padding: 0 0 5px 0;
+		margin: 0;
+	}
+
+}
+
+input[type="password"], input[type="text"], textarea {
+	font-family: @f-body;
+	padding: 9px 10px;
+	outline: none;
+	border: 1px solid @c-lightgrey;
+	width: 100%;
+
+	&:focus {
+		box-shadow: 0 0 5px 1px @c-yellow;
+	}
+}
+
+input[type="checkbox"] {
+	margin-right: 5px;
+}
+
+button, input[type="button"], input[type="submit"] {
+	.btn;
+	border: 0 none;
+}
