@@ -126,6 +126,22 @@
 		}
 	}
 
+	.carousel-right {
+		&:after {
+      content: '';
+      position: absolute;
+      right: 30px; top: 0;
+      width: 30px;
+      height: 150px;
+      background: url(../img/carousel-right.png) no-repeat center;
+      background-size: 100%;
+      opacity: 0.6;
+      &:hover {
+      	cursor: pointer;
+      }
+    }
+	}
+
 	// Animation
 	.animate(@duration) {
 		-webkit-transition: all @duration ease;

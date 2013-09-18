@@ -74,6 +74,7 @@ section.featured {
 
   .feature-row {
     .cf;
+    position: relative;
     width: 100%;
     padding: 0 @side-padding;
     height: 150px;
@@ -147,24 +148,34 @@ section.featured {
     &.editors {
       background: @c-yellow;
       color: @c-black;
+      
       .overlay {
         background: @c-yellow;
       }
+
+      .carousel-right;
+
     }
     &.top100 {
       background: @c-red;
+      
       h2:hover {
         cursor: pointer;
       }
+      
       .feature-block {
         background: url(../img/top100.jpg) top center repeat-x darken(@c-red,20%);
       }
     }
     &.collections {
       background: @c-darkgrey;
+     
       h2:hover {
         cursor: pointer;
       }
+
+      .carousel-right;
+     
       .overlay {
         background: @c-black;
       }
@@ -172,8 +183,10 @@ section.featured {
     &.browse {
       background: @c-black;
       text-align: center;
+     
       h2 {
         width: 100%;
+     
         &:hover {
           cursor: pointer;
         }
