@@ -3,42 +3,69 @@
   background: @c-darkgrey;
   color: @c-white;
   padding: 0;
+}
+
+section.hero {
+  background: url(../img/car_intro.jpg) no-repeat center #000;
+  background-size: 120%;
+  padding: 100px 0 130px 0;
 
   h1 {
-    font-size: 3em;
+    font-size: 4em;
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 1em;
   }
 
-  .intro {
+  .sell {
     width: 60%;
     margin: 0 auto;
     font-size: 2em;
-    font-weight: 200;
+    font-weight: 400;
+    line-height: 1em;
+  }
+  .intro {
+    font-weight: 400;
+    font-size: 1.5em;
+    width: 70%;
+    margin: 20px auto 0 auto;
   }
 
   form {
+    position: relative;
     width: 100%;
     max-width: 800px;
     margin: 40px auto 10px auto;
 
     input[type=text] {
-      font-size: 1.3em;
-      padding: 20px;
+      font-size: 1.5em;
+      padding: 15px;
     }
 
     input[type=submit] {
       display: none;
     }
   }
-}
 
-section.hero {
-  background: @c-black;
-  padding: 70px;
+  a.clear-search {
+    position: absolute;
+    color: @c-darkgrey;
+    font-size: 2em;
+    font-weight: 800;
+    top: 12px;
+    right: 18px;
+
+    &:hover {
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+
 }
 
 section.featured {
   margin: 0;
-  padding: 70px 0 0 0;
+  padding: 0;
   background: @c-black;
 
   h2 {
@@ -48,6 +75,7 @@ section.featured {
   .feature-row {
     .cf;
     width: 100%;
+    padding: 0 @side-padding;
     height: 150px;
     background: @c-darkgrey;
     color: @c-white;
@@ -57,17 +85,23 @@ section.featured {
       font-size: 3em;
       float: left;
       font-style: italic;
-      padding: 42px 0 0 42px;
+      padding: 42px 0 0 0;
       margin: 0;
       text-transform: none;
     }
 
-    ul {
-      margin: 0;
-      list-style-type: none;
-      width: 65%;
+    .feature-block {
+      width: 63%;
+      max-width: 900px;
       float: right;
       overflow: hidden;
+      height: 150px;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
       height: 150px;
 
       li {
@@ -75,40 +109,74 @@ section.featured {
         display: block;
         float: left;
         width: 225px;
+        height: 150px;
         text-align: left;
         background: @c-black;
 
+        &:hover {
+          cursor: pointer;
+        }
+
         p {
           position: absolute;
-          bottom: 5px;
-          left: 10px;
+          bottom: 10px;
+          left: 15px;
           z-index: 10;
           font-weight: bold;
           font-style: italic;
+          color: @c-white;
         }
 
         img {
           width: 100%;
           height: 100%;
           display: block;
+          // filter: url(../filters.svg#grayscale);
+          // filter: gray;
+          // -webkit-filter: grayscale(1);
+          
+          // &:hover {
+          //     filter: none;
+          //     -webkit-filter: grayscale(0);
+          // }
         }
 
       }
     }
 
     &.editors {
-      background: darken(@c-yellow,30%);
+      background: @c-yellow;
+      color: @c-black;
       .overlay {
-        background: rgba(200,150,0,0.8);
+        background: @c-yellow;
       }
     }
     &.top100 {
-      background: darken(@c-red,20%);
+      background: @c-red;
+      h2:hover {
+        cursor: pointer;
+      }
+      .feature-block {
+        background: url(../img/top100.jpg) top center repeat-x darken(@c-red,20%);
+      }
     }
     &.collections {
-      background: @c-black;
+      background: @c-darkgrey;
+      h2:hover {
+        cursor: pointer;
+      }
       .overlay {
-        background: rgba(50,30,0,0.8);
+        background: @c-black;
+      }
+    }
+    &.browse {
+      background: @c-black;
+      text-align: center;
+      h2 {
+        width: 100%;
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
   }
@@ -137,10 +205,21 @@ section.featured {
         }
       }
 
+      .rating {
+        width: 100px;
+        background: url(../img/stars_small_white.png) no-repeat center left;
+        background-size: 100%;
+        height: 22px;
+      }
+      .rating-large {
+        display: none;
+      }
+
       span {
         display: inline-block;
         float: right;
         font-size: normal;
+        margin-left: 20px;
       }
     }
 
@@ -180,6 +259,18 @@ section.featured {
       }
     }
 
+    .rating {
+      display: none;
+    }
+    .rating-large {
+      display: block;
+      width: 100px;
+      background: url(../img/stars_big.png) no-repeat center left;
+      background-size: 100%;
+      height: 22px;
+      margin: 0 0 20px 0;
+    }
+
     .image {
       display: block;
       width: 50%;
@@ -203,7 +294,7 @@ section.featured {
     p {
       width: 50%;
       display: block;
-      margin: 10px 0 20px 0;
+      margin: 10px 0 10px 0;
       font-size: 1.1em;
       font-weight: 300;
       line-height: 1.5em;

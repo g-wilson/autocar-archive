@@ -12,6 +12,7 @@
 }
 
 body {
+    min-width: 960px;
     background: @c-darkgrey;
     color: @c-black;
     font-family: @f-body;
@@ -26,22 +27,22 @@ body {
         position: fixed;
         top: 0; left: 0; right: 0;
         height: 60px;
-        padding: 10px 50px;
+        padding: 10px @side-padding;
         background: @c-white;
+        z-index: 9999;
 
         h1 {
             float: left;
             margin-top: 5px;
             width: 20%;
-            background-size: 100%;
             font-weight: 800;
             font-size: 1.7em;
             color: @c-red;
             text-shadow: 0 1px 0 @c-mediumgrey;
-            // text-indent: -9999px;
-            // background: url(../img/autocar-plus.png) no-repeat top left;
+            text-indent: -9999px;
+            background: url(../img/autocar-logo.png) no-repeat top left;
             background-size: 100%;
-            max-width: 200px;
+            max-width: 180px;
             text-transform: uppercase;
         }
 
@@ -105,6 +106,15 @@ a {
     &:hover {
         text-decoration: underline;
     }
+}
+
+span.icon-cta {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-bottom: -3px;
+    background: url(../img/cta.png) no-repeat center;
+    background-size: 100%;
 }
 
 span.number {

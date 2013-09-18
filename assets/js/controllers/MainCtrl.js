@@ -11,7 +11,9 @@ autocar.controller('MainCtrl', function($scope, SearchIndex) {
   })
 
   $scope.expandListing = function(ev) {
-    var elem = angular.element(ev.srcElement).parent().parent().toggleClass('result-large');
+    angular.element(ev.srcElement).parent().parent().toggleClass('result-large');
+    var imgUrl = angular.element(ev.srcElement).parent().parent().find('img').attr('data-src');
+    angular.element(ev.srcElement).parent().parent().find('img').attr('src',imgUrl);
   }
 
 });
