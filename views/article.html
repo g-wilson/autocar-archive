@@ -5,8 +5,8 @@
       <input type="submit" class="hidden"/>
       <a class="clear-search" ng-show="query.length > 0" ng-click="clearSearch()">×</a>
 
-      <div class="quick-results" ng-if="query.length > 1">
-        <div class="result" ng-repeat="item in filtered = (results | filter:query) | orderBy:'year':true | limitTo: itemsLimit()">
+      <div class="quick-results fade-in" ng-if="query.length > 1">
+        <div class="result fade-in" ng-repeat="item in filtered = (results | filter:query) | orderBy:'year':true | limitTo: itemsLimit()">
           <h3><a href="#">
             <span class="title">{{ item.title }}</span>
             <span class="year">{{ item.year }}</span>
@@ -23,7 +23,7 @@
   </nav>
 </header>
 
-<nav class="chapter-nav">
+<nav class="chapter-nav fade-hide {{ fadeDelayClass }}">
   <ul>
     <li>
       <a href="#chapter-1">
@@ -88,7 +88,7 @@
 
   <section class="full-bleed heading lead-image">
 
-    <div class="text-overlay">
+    <div class="text-overlay fade-hide {{ fadeClass }}">
       <h1>Mercedes-Benz A45 AMG</h1>
       <p class="byline">AMG pops its hot hatchback cherry in singular, inimitable fashion</p>
     </div>
@@ -100,7 +100,7 @@
       <div class="title">Model tested</div>
       <div class="model">A45 AMG 4Matic</div>
     </div>
-    <ul>
+    <ul class="fade-hide {{ fadeDelay2Class }}">
       <li><strong>Price</strong>£37,845</li>
       <li><strong>Power</strong>355bhp</li>
       <li><strong>Torque</strong>322lb ft</li>
@@ -111,7 +111,7 @@
     </ul>
   </section>
 
-  <section class="contain summary chapter" id="chapter-1">
+  <section class="contain summary chapter fade-hide {{ fadeDelayClass }}" id="chapter-1">
 
     <p>A few words in the Mercedes- Benz literature that accompanies the A45 AMG tell you much about the thinking behind this car: the target audience is drivers aged between 30 and mid- 40s. A great deal younger than your typical AMG buyer, or any other super-saloon buyer, in other words.</p>
 
@@ -151,7 +151,7 @@
 
   </section>
 
-  <section class="contain paynow g-row g-pad" ng-hide="isPaywalledClass == 'unlocked'">
+  <section class="contain paynow g-row g-pad fade-in" ng-hide="isPaywalledClass == 'unlocked'">
     <div class="g-1-2">
       <nav class="paywall-nav">
         <ul>
@@ -207,18 +207,15 @@
       </nav>
     </div>
     <div class="g-1-2">
+      <p>Purchase this road test now for £3.50 for immediate access to the full review, or purchase a digital subscription for full access.</p>
       <p>
-        <a class="btn btn-yellow" ng-click="unlock()">
-          <span class="icon flaticon solid unlock-1"></span>Unlock now
+        <a class="btn btn-darkgrey" ng-click="unlock()">
+          <span class="icon flaticon solid unlock-1"></span>Unlock now (£3.50)
         </a>
-        <a class="btn btn-mediumgrey">
-          <span class="icon flaticon solid heart-1"></span>Save for later
-        </a>
-        <a class="btn btn-mediumgrey">
-          <span class="icon flaticon solid document"></span>Download PDF
+        <a class="btn btn-darkgrey" ng-click="unlock()">
+          <span class="icon flaticon solid plus-2"></span>Subscribe (£60/year)
         </a>
       </p>
-      <p>Purchase this road test now for £3.50 for immediate access to the full review, or purchase a digital subscription for full access.</p>
     </div>
   </section>
 
@@ -255,7 +252,7 @@
         <p>Braking is by ventilated and cross-drilled disc brakes all round. There’s no ceramic option but, for £330, you can have the calipers in red.</p>
 		  </div>
   		<div class="g-1-4">
-        <div class="sidebar">
+        <div>
     			<img src="article/photos/small/A45_AMG_STU_054.jpg">
     			<img src="article/photos/small/A45_AMG_STU_001.jpg">
     			<img src="article/photos/small/A45_AMG_STU_058.jpg">
@@ -324,7 +321,7 @@
         <p>The A45 AMG is a very fast hot hatchback. Having spent a good 150 per cent of what you might call the going rate for such a car, owners would expect nothing less. They might reasonably expect this to be the fastest car of its kind ever produced, full stop. Which is why there’s the merest possibility of dissatisfaction here – from a car that, on one key discipline, is ever so slightly guilty of under-delivering.</p>
         <p>In the past 18 months, we’ve seen two premium-brand fast hatchbacks smash the prevailing class standard on 0-60mph acceleration: the Audi RS3 (4.5sec to 60mph) and the BMW M135i (4.6sec). Relatively speaking, our clocking of the A45 – 5.2sec, set on the same piece of asphalt in similar circumstances – isn’t quite competitive. It’s also more than half a second adrift of Mercedes’ claim.</p>
       </div>
-      <div class="g-1-4 sidebar">
+      <div class="g-1-4 sidebar" style="padding-bottom: 66px;">
         <h3>Power &amp; Torque</h3>
         <br>
         <img src="article/photos/small/Mercedes-A45-AMG-Power.png">
@@ -366,8 +363,8 @@
 		
 		<div class="contain g-row g-pad">
 			<div class="g-1-4">
-        <div class="sidebar">
-  				<img src="article/photos/small/A45_AMG_STU_011.JPG">
+        <div>
+  				<img src="article/photos/small/A45_AMG_STU_013.JPG">
   				<img src="article/photos/small/A45_AMG_STU_014.jpg">
   				<img src="article/photos/small/A45_AMG_STU_017.jpg">
   				<img src="article/photos/small/A45_AMG_STU_019.jpg">

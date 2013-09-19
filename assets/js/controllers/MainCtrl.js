@@ -8,6 +8,8 @@ autocar.controller('MainCtrl', function($scope, $location, $routeParams, SearchI
       $scope.query = $routeParams.query;
     }
 
+    $scope.heroFadeClass = 'hero-show';
+
   	$scope.results = data;
 
     var pagesShown = 1;

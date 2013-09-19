@@ -10,28 +10,30 @@
 <div id="main" class="homepage">
 
   <section class="hero">
-  
-    <h1>Welcome to AUTOCAR+</h1>
-    <p class="sell">Home of the road test since 1928</p>
-    <p class="intro">Thinking of <strong>buying</strong> a <strong>used car</strong>? Want to find the <strong>original review</strong> of that <strong>classic</strong> you've just bought? Search the <strong>Autocar+</strong> Road Test database for the most comprehensive review of <strong>EVERY CAR</strong> we've ever tested.</p>
+    
+    <div class="hero-hide {{ heroFadeClass }}">
+      <h1>Welcome to AUTOCAR+</h1>
+      <p class="sell">Home of the road test since 1928</p>
+      <p class="intro">Thinking of <strong>buying</strong> a <strong>used car</strong>? Want to find the <strong>original review</strong> of that <strong>classic</strong> you've just bought? Search the <strong>Autocar+</strong> Road Test database for the most comprehensive review of <strong>EVERY CAR</strong> we've ever tested.</p>
 
-    <form class="hero-search">
+      <form class="hero-search">
 
-      <input type="text" placeholder="Search for road tests e.g. Aston Martin 1965" ng-model="query"/>
-      <input type="submit" class="hidden"/>
-      
-      <a class="clear-search" ng-show="query.length > 0" ng-click="clearSearch()">×</a>
+        <input type="text" placeholder="Search for road tests e.g. Aston Martin 1965" ng-model="query"/>
+        <input type="submit" class="hidden"/>
+        
+        <a class="clear-search" ng-show="query.length > 0" ng-click="clearSearch()">×</a>
 
-    </form>
+      </form>
+    </div>
 
   </section>
 
-  <section class="search-results count-{{ filtered.length }}" ng-if="query.length > 1">
+  <section class="search-results fade-in count-{{ filtered.length }}" ng-if="query.length > 1">
 
     <p>{{ filtered.length }} results</p>
     <p ng-show="filtered.length > 25">Try being more specific</p>
 
-  	<div class="result" ng-repeat="item in filtered = (results | filter:query) | orderBy:'year':true | limitTo: itemsLimit()">
+  	<div class="result fade-in" ng-repeat="item in filtered = (results | filter:query) | orderBy:'year':true | limitTo: itemsLimit()">
       <div class="image"><img class="ondemand" data-src="{{ item.image }}" ng-if="filtered.length > 5" /><img src="{{ item.image }}" ng-if="filtered.length < 5" /></div>
   		<h3>
   			<a ng-click="expandListing($event)">{{ item.title }}</a>

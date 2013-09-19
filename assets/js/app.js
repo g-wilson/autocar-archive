@@ -1,6 +1,6 @@
 'use strict';
 
-var autocar = angular.module('autocar', ['ngRoute']).
+var autocar = angular.module('autocar', ['ngRoute','ngAnimate']).
   config(function($routeProvider) {
 
     $routeProvider.

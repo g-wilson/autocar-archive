@@ -2,6 +2,10 @@
 
 autocar.controller('ArticleCtrl', function($scope) {
 
+  $scope.fadeClass = 'fade-show';
+  $scope.fadeDelay2Class = 'fade-delay2-show';
+  $scope.fadeDelayClass = 'fade-delay-show';
+
   $scope.isPaywalledClass = 'is-paywalled';
 
   $scope.unlock = function() {
