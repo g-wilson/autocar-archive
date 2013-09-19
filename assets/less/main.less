@@ -9,7 +9,6 @@
 	@import "grid.less"; // Grid system and responsive base
 	@import "global.less"; // Re-usable components or global styles
 	@import "forms.less"; // Self explanatory
-	@import "states.less"; // Element states (JS)
 	@import "home.less"; // Homepage
 	@import "article.less"; // Article page
 
@@ -77,18 +76,6 @@
 				transform: skew(@xdeg,@ydeg);
 	}
 
-	.cutout {
-		content: '';
-		width: 0px;
-		height: 0px;
-		position: absolute;
-		right: 0;
-		bottom: 0;
-		border-style: solid;
-		border-width: 0 0 50px 20px;
-		border-color: transparent transparent #ffffff transparent;
-	}
-
 	.overlay {
 		position: absolute;
 		z-index: 9;
@@ -101,28 +88,6 @@
 		&:hover {
 			opacity: 0;
 			.animate(0.2s,0);
-		}
-	}
-
-	.heading-cta(@c1,@c2) {
-		position: absolute;
-		right: -10px;
-		bottom: 0;
-		height: 30px;
-		background: @c1;
-		padding: 5px 15px 5px 7px;
-		color: @c2;
-		text-transform: uppercase;
-		font-weight: lighter;
-
-		&:before {
-			content: '';
-			display: block;
-			width: 0; height: 0;
-			position: absolute;
-			left: -30px; top: 0;
-			border-left: 30px solid transparent;
-			border-bottom: 30px solid @c1;
 		}
 	}
 
