@@ -24,7 +24,6 @@ autocar.controller('MainCtrl', function($scope, $location, $routeParams, SearchI
     $scope.clearSearch = function() {
       $scope.query = '';
       pagesShown = 1;
-      $location.path('#/');
     }
 
   }).error(function() {
