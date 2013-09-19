@@ -1,6 +1,6 @@
 #Autocar+ / Autocar Archive
 
-(http://g-wilson.github.io/autocar-archive/)[http://g-wilson.github.io/autocar-archive/]
+[http://g-wilson.github.io/autocar-archive/](http://g-wilson.github.io/autocar-archive/)
 
 --------------------------------
 
