@@ -1,10 +1,11 @@
 'use strict';
 
-var autocar = angular.module('autocar', ['ngRoute','ngAnimate','ngSanitize']).
+var autocar = angular.module('autocar', ['ngRoute']).
   config(function($routeProvider) {
 
     $routeProvider.
     when('/', {controller:'MainCtrl', templateUrl:'views/home.html'}).
+    when('/s/:query', {controller:'MainCtrl', templateUrl:'views/home.html'}).
     when('/article', {controller:'ArticleCtrl', templateUrl:'views/article.html'}).
     when('/top100', {controller:'TopCtrl', templateUrl:'views/top100.html'}).
     otherwise({redirectTo:'/'});

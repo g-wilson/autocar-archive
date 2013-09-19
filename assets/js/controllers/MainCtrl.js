@@ -1,8 +1,12 @@
 'use strict';
 
-autocar.controller('MainCtrl', function($scope, SearchIndex) {
+autocar.controller('MainCtrl', function($scope, $location, $routeParams, SearchIndex) {
 
   SearchIndex.getCarList().success(function(data) {
+
+    if ($routeParams.query) {
+      $scope.query = $routeParams.query;
+    }
 
   	$scope.results = data;
 
@@ -20,6 +24,7 @@ autocar.controller('MainCtrl', function($scope, SearchIndex) {
     $scope.clearSearch = function() {
       $scope.query = '';
       pagesShown = 1;
+      $location.path('#/');
     }
 
   }).error(function() {

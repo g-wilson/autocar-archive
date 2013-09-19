@@ -254,6 +254,20 @@
 	
   }
 
+  section.video {
+    h2 {
+      margin: 30px 0 20px 0;
+    }
+    padding-bottom: 80px;
+  }
+
+  .video-placeholder {
+    width: 100%;
+    height: 500px;
+    background: @c-mediumgrey;
+    margin: 10px 0;
+  }
+
 }
 
 nav.chapter-nav {
@@ -351,7 +365,9 @@ section.paynow {
   .btn {
     display: block;
     float: left;
-    margin-right: 20px;
+    margin-right: 10px;
+    font-size: 0.8em;
+    padding: 10px;
 
     .icon {
       display: inline-block;
@@ -394,12 +410,71 @@ nav.paywall-nav {
   }
 }
 
-.is-paywalled .chapter p {
-  color: transparent;
-  text-shadow: 0 0 10px rgba(0,0,0,0.5);
+.is-paywalled {
+  opacity: 0.5;
+
+  img {
+    opacity: 0.3;
+  }
+
+  .chapter p {
+    color: transparent;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
+
 }
 
+.quick-search {
+  position: relative;
 
+  input {
+    position: relative;
+  }
+
+  .clear-search {
+    position: absolute;
+    color: @c-black;
+    right: 10px;
+    top: 10px;
+
+    &:hover {
+      cursor: pointer;
+      text-decoration: none;
+    }
+  }
+
+  .quick-results {
+    background: @c-white;
+    padding: 20px;
+    border: 1px solid @c-lightgrey;
+    color: @c-darkgrey;
+    font-size: 0.8em;
+
+    a {
+      color: @c-darkgrey;
+
+      .title:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .result {
+      .cf;
+      margin-bottom: 20px;
+    }
+
+    .year {
+      float: right;
+      width: 10%;
+    }
+    .title {
+      float: left;
+      width: 75%;
+    }
+
+  }
+
+}
 
 
 

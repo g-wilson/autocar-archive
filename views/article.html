@@ -1,8 +1,20 @@
 <header>
   <a href="../"><h1>Autocar</h1></a>
-  <form class="search">
-    <input type="text" placeholder="search"/>
-    <input type="submit" class="hidden"/>
+  <form class="quick-search" ng-controller="MainCtrl">
+    <input type="text" placeholder="Quick search" ng-model="query"/>
+      <input type="submit" class="hidden"/>
+      <a class="clear-search" ng-show="query.length > 0" ng-click="clearSearch()">×</a>
+
+      <div class="quick-results" ng-if="query.length > 1">
+        <div class="result" ng-repeat="item in filtered = (results | filter:query) | orderBy:'year':true | limitTo: itemsLimit()">
+          <h3><a href="#">
+            <span class="title">{{ item.title }}</span>
+            <span class="year">{{ item.year }}</span>
+          </a></h3>
+        </div>
+        <a href="#/s/{{ query }}" ng-show="filtered.length > 10">{{ filtered.length - 10 }} more</a>
+      </div>
+
   </form>
   <nav>
     <ul>
@@ -136,6 +148,7 @@
         </div-->
       </div>
     </div>
+
   </section>
 
   <section class="contain paynow g-row g-pad" ng-hide="isPaywalledClass == 'unlocked'">
@@ -198,15 +211,24 @@
         <a class="btn btn-yellow" ng-click="unlock()">
           <span class="icon flaticon solid unlock-1"></span>Unlock now
         </a>
-        <a class="btn btn-blue">
+        <a class="btn btn-mediumgrey">
           <span class="icon flaticon solid heart-1"></span>Save for later
         </a>
+        <a class="btn btn-mediumgrey">
+          <span class="icon flaticon solid document"></span>Download PDF
+        </a>
       </p>
-      <p>Purchase this road test now for £3.50 for immediate access to the full review, or purchase a digital subscription.</p>
+      <p>Purchase this road test now for £3.50 for immediate access to the full review, or purchase a digital subscription for full access.</p>
     </div>
   </section>
 
   <div class="{{ isPaywalledClass }}">
+
+  <section class="contain video">
+    <hr/>
+    <h2>Video review</h2>
+    <div class="video-placeholder"></div>
+  </section>
   
   <section class="chapter" id="chapter-2">
 	  	
